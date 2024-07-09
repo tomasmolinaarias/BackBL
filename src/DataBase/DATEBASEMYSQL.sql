@@ -180,46 +180,6 @@ CREATE TABLE IF NOT EXISTS `biblioteca`.`reserva` (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_0900_ai_ci;
--------------------------------------------------------
--- INSERTAR `LIBROS`
--------------------------------------------------------
-INSERT INTO libros (titulo, autor, editorial, ano_publicacion, isbn, genero, idioma, ubicacion, cantidad_disponible, cantidad_prestada)
-VALUES
-    ('El código Da Vinci', 'Dan Brown', 'Planeta', 2003, '9788408011729', 'Misterio', 'Español', 'Sector A', 5, 0),
-    ('1984', 'George Orwell', 'Debolsillo', 2017, '9788466339532', 'Ciencia ficción', 'Español', 'Sector B', 3, 0),
-    ('Cien años de soledad', 'Gabriel García Márquez', 'Diana', 1967, '9788497592208', 'Realismo mágico', 'Español', 'Sector C', 7, 0),
-    ('Harry Potter y la piedra filosofal', 'J.K. Rowling', 'Salamandra', 1999, '9788478884450', 'Fantasía', 'Español', 'Sector D', 4, 0),
-    ('The Catcher in the Rye', 'J.D. Salinger', 'Back Bay Books', 2001, '9780316769488', 'Novela', 'Inglés', 'Sector E', 6, 0),
-    ('To Kill a Mockingbird', 'Harper Lee', 'Harper Perennial Modern Classics', 2006, '9780061120084', 'Ficción', 'Inglés', 'Sector F', 2, 0),
-    ('Pride and Prejudice', 'Jane Austen', 'Penguin Classics', 2003, '9780141439518', 'Romance', 'Inglés', 'Sector G', 8, 0),
-    ('Don Quijote de la Mancha', 'Miguel de Cervantes', 'Espasa-Calpe', 2004, '9788421693730', 'Novela', 'Español', 'Sector H', 5, 0),
-    ('The Lord of the Rings', 'J.R.R. Tolkien', 'Houghton Mifflin Harcourt', 2004, '9780618640157', 'Fantasía', 'Inglés', 'Sector I', 3, 0),
-    ('The Great Gatsby', 'F. Scott Fitzgerald', 'Scribner', 2004, '9780743273565', 'Ficción', 'Inglés', 'Sector J', 4, 0);
--------------------------------------------------------
--- INSERTAR `salaEstudio`
--------------------------------------------------------
-INSERT INTO salaEstudio (nombre_sala, capacidad, equipamiento)
-VALUES
-    ('Sala 1', 10, 'Mesas y sillas'),
-    ('Sala 2', 8, 'Pizarra y proyector'),
-    ('Sala 3', 12, 'Computadoras'),
-    ('Sala 4', 6, 'Sillones y biblioteca');
--------------------------------------------------------
--- INSERTAR `alumno`
--------------------------------------------------------
-INSERT INTO alumno (rut, nombre, correo_electronico)
-VALUES
-    ('12345678-9', 'Juan Pérez', 'juanperez@example.com'),
-    ('98765432-1', 'María Gómez', 'mariagomez@example.com'),
-    ('45678901-2', 'Carlos Rodríguez', 'carlosrodriguez@example.com');
--------------------------------------------------------
--- INSERTAR `bibliotecario`
--------------------------------------------------------
-INSERT INTO bibliotecario (rut, nombre, correo_electronico, contrasena, rol)
-VALUES
-    ('23456789-0', 'Ana Martínez', 'anamartinez@example.com', 'clave123', 'bibliotecario'),
-    ('34567890-1', 'Luis García', 'luisgarcia@example.com', 'contraseña456', 'jefe_bibliotecario');
-
 
 
 SET SQL_MODE=@OLD_SQL_MODE;
