@@ -13,6 +13,7 @@ const router = express.Router();
 // GET
 router.get("/", HolaMundo.saludos);
 router.get('/alumnos', Alumnos.leer);
+router.get('/alumnos/:rut', Alumnos.leer1);
 router.get('/libros', Libros.leer);
 router.get('/bibliotecarios', Bibliotecarios.Bibliotecarios);
 router.get('/bibliotecarios/jefes', JefeBibliotecarios.Jefe);
