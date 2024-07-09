@@ -39,6 +39,29 @@ const Bibliotecarios = {
                 error: "Error interno del servidor"
             });
         }
+    },
+    bibliotecario: async (req, res) => {
+        const { rut } = req.params;
+        if (!rut) {
+          return res.status(400).json({ error: "Falta el parámetro rut" });
+        }
+      
+        try {
+          const BibliotecarioExistente = await Bibliotecario.findOne({
+            where: {
+              rut: rut 
+            }
+          });
+          if (!BibliotecarioExistente) {
+            return res.status(404).json({ error: "Bibliotecario no encontrado" });
+          }
+          res.status(200).json(BibliotecarioExistente);
+        } catch (error) {
+          console.error("Error al buscar al Bibliotecario: ", error);
+          res.status(500).json({
+            error: "Error interno del servidor"
+          });
+        }
     }
 };
 

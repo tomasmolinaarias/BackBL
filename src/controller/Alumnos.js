@@ -16,9 +16,8 @@ const Alumnos = {
       });
     }
   },
-  leer1: async (req, res) => {
+  alumno: async (req, res) => {
     const { rut } = req.params;
-    // Validación simple, considera utilizar una librería de validación para más complejidad
     if (!rut) {
       return res.status(400).json({ error: "Falta el parámetro rut" });
     }
@@ -39,7 +38,7 @@ const Alumnos = {
         error: "Error interno del servidor"
       });
     }
-  },
+  }
 };
 
 export default Alumnos;

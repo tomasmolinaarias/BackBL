@@ -1,5 +1,5 @@
 import express from "express";
-import Alumnos from "../controller/alumnos.js";
+
 import Libros from "../controller/Libros.js";
 import HolaMundo from "../controller/HolaMundo.js";
 import { Bibliotecarios, JefeBibliotecarios, User } from "../controller/UsuariosController.js";
@@ -7,15 +7,17 @@ import AuthController from "../auth/AuthController.js";
 import PrestamoController from "../controller/PrestamoController.js";
 import SalaEstudioController from "../controller/SalaEstudio.js";
 import ReservaController from "../controller/ReservaController.js";
+import Alumnos from "../controller/Alumnos.js";
 
 const router = express.Router();
 
 // GET
 router.get("/", HolaMundo.saludos);
 router.get('/alumnos', Alumnos.leer);
-router.get('/alumnos/:rut', Alumnos.leer1);
+router.get('/alumnos/:rut', Alumnos.alumno);
 router.get('/libros', Libros.leer);
 router.get('/bibliotecarios', Bibliotecarios.Bibliotecarios);
+router.get('/bibliotecario/:rut', Bibliotecarios.bibliotecario);
 router.get('/bibliotecarios/jefes', JefeBibliotecarios.Jefe);
 router.get('/prestamos', PrestamoController.leer);
 router.get('/salas', SalaEstudioController.leer);
