@@ -11,7 +11,7 @@ const Bibliotecarios = {
         try {
             const rol = req.query.rol; // Extrae el rol de la consulta
             let condiciones = {
-                attributes: ['nombre', 'correo_electronico', 'rol']
+                attributes: ['nombre', 'correo_electronico', 'rol','rut']
             };
             if (rol) {
                 if (rol === 'bibliotecario') {
